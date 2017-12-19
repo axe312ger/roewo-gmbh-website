@@ -88,7 +88,7 @@ class Telephone extends React.Component {
     let available = false
 
     if (weekday >= 1 && weekday <= 5) {
-      if (hours >= 8 && hours <= 12) {
+      if (hours >= 8 && hours < 16) {
         available = true
       }
     }
