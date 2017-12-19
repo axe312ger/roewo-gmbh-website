@@ -8,44 +8,38 @@ const propTypes = {
   data: PropTypes.object.isRequired
 }
 
-class PageTemplate extends React.Component {
+class ServiceTemplate extends React.Component {
   render () {
-    const page = this.props.data.contentfulPage
+    const service = this.props.data.contentfulService
     const {
+      id,
       headline,
       title,
-      content,
-      slug
-    } = page
-
-    const services = this.props.data.allContentfulService.edges
-    let serviceArea = null
-    if (slug === 'home') {
-      serviceArea = <Services services={services} />
-    }
-
+      description
+    } = service
     return (
       <article>
         <Helmet title={`${title} - RöWo GmbH Containerservice`} />
         <h1>{headline}</h1>
-        <div dangerouslySetInnerHTML={{ __html: content.childMarkdownRemark.html }} />
-        {serviceArea}
+        <div dangerouslySetInnerHTML={{ __html: description.childMarkdownRemark.html }} />
+        <Services services={this.props.data.allContentfulService.edges} active={id}/>
       </article>
     )
   }
 }
 
-PageTemplate.propTypes = propTypes
+ServiceTemplate.propTypes = propTypes
 
-export default PageTemplate
+export default ServiceTemplate
 
 export const pageQuery = graphql`
-  query pageQuery($slug: String!) {
-    contentfulPage(slug: { eq: $slug }) {
+  query serviceQuery($slug: String!) {
+    contentfulService(slug: { eq: $slug }) {
+      id
       title
       slug
       headline
-      content {
+      description {
         childMarkdownRemark {
           html
         }
