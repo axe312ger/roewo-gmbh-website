@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import styled, { injectGlobal } from 'styled-components'
+import styled from 'styled-components'
 import Link from 'gatsby-link'
 
 import {
@@ -14,17 +14,6 @@ import deLocale from 'date-fns/locale/de'
 
 import 'normalize.css'
 
-injectGlobal`
-  a {
-    color: inherit;
-
-    &:hover {
-      color: inherit;
-      text-decoration: underline;
-    }
-  }
-`
-
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -35,6 +24,15 @@ const Header = styled.div`
   flex: 0 0 auto;
   background: #fd2321;
   color: #fff;
+
+  a {
+    color: inherit;
+
+    &:hover {
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
 `
 
 const Footer = Header.extend``
