@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import styled from 'styled-components'
+import styled, { injectGlobal } from 'styled-components'
+import Link from 'gatsby-link'
 
 import {
   getDay, getHours,
@@ -12,6 +13,17 @@ import {
 import deLocale from 'date-fns/locale/de'
 
 import 'normalize.css'
+
+injectGlobal`
+  a {
+    color: inherit;
+
+    &:hover {
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
+`
 
 const Wrapper = styled.div`
   display: flex;
@@ -25,13 +37,13 @@ const Header = styled.div`
   color: #fff;
 `
 
+const Footer = Header.extend``
+
 const Headline = styled.h1`
   color: inherit;
   margin: 0;
   padding: 1rem 0;
 `
-
-const Footer = Header.extend``
 
 const FooterText = styled.p`
   margin: 0;
@@ -125,7 +137,9 @@ const TemplateWrapper = ({ children }) => (
     />
     <Header>
       <Row>
-        <Headline>RöWo GmbH Containerservice</Headline>
+        <Headline>
+          <Link to='/'>RöWo GmbH Containerservice</Link>
+        </Headline>
       </Row>
     </Header>
     <Main>
