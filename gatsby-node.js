@@ -71,8 +71,7 @@ async function loadServices (graphql, createPage) {
       component: pageTemplatePath,
       context: {
         id: edge.node.id,
-        slug: edge.node.slug,
-        services: result.data.allContentfulService.edges
+        slug: edge.node.slug
       }
     })
   })
