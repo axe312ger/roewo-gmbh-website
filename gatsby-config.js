@@ -51,6 +51,7 @@ module.exports = {
         'display': 'standalone'
       }
     },
+    'gatsby-plugin-styled-components',
     'gatsby-plugin-offline',
     'gatsby-transformer-remark'
   ]
