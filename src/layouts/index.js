@@ -22,7 +22,7 @@ const Wrapper = styled.div`
 
 const Header = styled.div`
   flex: 0 0 auto;
-  background: #fd2321;
+  background: #b20e2b;
   color: #fff;
 
   a {

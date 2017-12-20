@@ -25,16 +25,14 @@ module.exports = {
         trackingId: 'UA-3103140-14'
       }
     },
-    {
-      resolve: 'gatsby-plugin-sitemap'
-    },
+    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
         'name': 'RöWo GmbH',
         'short_name': 'RöWo',
         'start_url': '/',
-        'background_color': '#fff',
+        'background_color': '#b20e2b',
         'icons': [
           {
             'src': '/android-chrome-192x192.png',
@@ -47,7 +45,7 @@ module.exports = {
             'type': 'image/png'
           }
         ],
-        'theme_color': '#fff',
+        'theme_color': '#b20e2b',
         'display': 'standalone'
       }
     },
