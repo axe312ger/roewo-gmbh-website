@@ -22,7 +22,7 @@ class ServiceTemplate extends React.Component {
         <Helmet title={`${title} - RöWo GmbH Containerservice`} />
         <h1>{headline}</h1>
         <div dangerouslySetInnerHTML={{ __html: description.childMarkdownRemark.html }} />
-        <Services services={this.props.data.allContentfulService.edges} active={id}/>
+        <Services services={this.props.data.allContentfulService.edges} active={id} />
       </article>
     )
   }

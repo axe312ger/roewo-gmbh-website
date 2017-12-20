@@ -6,6 +6,7 @@
   "dependencies": {
     "date-fns": "^1.29.0",
     "gatsby": "^1.9.141",
+    "gatsby-image": "^1.0.30",
     "gatsby-link": "^1.6.32",
     "gatsby-plugin-google-analytics": "^1.0.14",
     "gatsby-plugin-manifest": "^1.0.11",
