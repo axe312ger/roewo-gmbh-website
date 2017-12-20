@@ -20,6 +20,16 @@ const Wrapper = styled.div`
   min-height: 100vh;
 `
 
+const Row = styled.div`
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0 1rem;
+`
+
+const Main = styled.div`
+  flex: 1 1 auto;
+`
+
 const Header = styled.div`
   flex: 0 0 auto;
   background: #b20e2b;
@@ -35,7 +45,22 @@ const Header = styled.div`
   }
 `
 
-const Footer = Header.extend``
+const HeaderRow = Row.extend`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+`
+
+const Logo = styled.div`
+  flex: 0 1 400px;
+  margin-right: 1rem;
+  padding: 1rem 0;
+
+  & img {
+    margin: 0;
+  }
+`
 
 const Headline = styled.h1`
   color: inherit;
@@ -43,19 +68,24 @@ const Headline = styled.h1`
   padding: 1rem 0;
 `
 
+const Footer = Header.extend``
+
 const FooterText = styled.p`
   margin: 0;
-  padding: 1rem;
+  padding: 1rem 0;
 `
 
-const Main = styled.div`
-  flex: 1 1 auto;
+const FooterMenu = styled.ul`
+  display: flex;
+  list-style: none;
+  margin: 0 0 1rem;
 `
-
-const Row = styled.div`
-  margin: 0 auto;
-  max-width: 960px;
-  padding: 0 1rem;
+const FooterMenuItem = styled.li`
+  margin: 0;
+  margin-right: 1rem;
+  &:last-child {
+    margin-right: 0;
+  }
 `
 
 class Telephone extends React.Component {
@@ -134,11 +164,16 @@ const TemplateWrapper = ({ children }) => (
       ]}
     />
     <Header>
-      <Row>
+      <HeaderRow>
+        <Logo>
+          <Link to='/'>
+            <img src='./roewo-logo-white.svg' alt='RöWo GmbH Containerservice' />
+          </Link>
+        </Logo>
         <Headline>
-          <Link to='/'>RöWo GmbH Containerservice</Link>
+          <Link to='/'>Containerservice</Link>
         </Headline>
-      </Row>
+      </HeaderRow>
     </Header>
     <Main>
       <Row>
@@ -148,6 +183,10 @@ const TemplateWrapper = ({ children }) => (
     <Footer>
       <Row>
         <Telephone />
+        <FooterMenu>
+          <FooterMenuItem><Link to='/team'>Team</Link></FooterMenuItem>
+          <FooterMenuItem><Link to='/imprint'>Impressum</Link></FooterMenuItem>
+        </FooterMenu>
       </Row>
     </Footer>
   </Wrapper>
