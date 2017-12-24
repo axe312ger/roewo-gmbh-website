@@ -180,6 +180,7 @@ const TemplateWrapper = ({ children }) => (
           )} />
           <FooterMenu>
             <FooterMenuItem><Link to='/team'>Team</Link></FooterMenuItem>
+            <FooterMenuItem><Link to='/service-area'>Liefergebiet</Link></FooterMenuItem>
             <FooterMenuItem><Link to='/imprint'>Impressum</Link></FooterMenuItem>
           </FooterMenu>
         </Row>
